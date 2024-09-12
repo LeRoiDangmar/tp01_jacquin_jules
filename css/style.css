@@ -1,0 +1,24 @@
+body{
+    align-items: center;
+    text-align: center;
+    padding: 1vw;
+
+}
+
+#bienvenu{
+    margin-bottom: 3vh;
+}
+
+#submit{
+    background-color:darkolivegreen;
+    height: 5vh;
+    width: 30vw;
+}
+
+input{
+    border-radius: 10px;
+    width: 30vw;
+}
+
+
+.error { color: red; }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="utf-8">
+
+<head>
+
+    <title>tp01_jules_jacquin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./jquery-3.7.1.min.js"></script>
+
+</head>
+
+<header>
+
+</header>
+
+<body>
+
+    <h1 id="bienvenu">Bienvenu sur mon superbe formulaire</h1>
+
+    <div id="formulaire">
+
+        <form id="creationCompte">
+            
+                <label for="nom">Entrez votre nom</label>
+                <input id="nom" type="text" required><br>
+                <label for="prenom">Entrez votre prenom</label>
+                <input id="prenom" type="text" required><br>
+                <label for="adresse">Entrez votre adresse</label>
+                <input id="adresse" type="text" required><br>
+                <label for="cp">Entrez votre code postal</label>
+                <input id="cp" type="number" min="10000" max="99999" required><br>
+                <label for="ville">Entrez votre ville</label>
+                <input id="ville" type="text" required><br>
+                <label for="telephone">Entrez votre N° de telephone</label>
+                <input id="telephone" type="number" min="1000000000" max="9999999999" required><br>
+                <label for="email">Entrez votre adresse email</label>
+                <input id="email" type="email" required><br>
+                <label for="civilité">Entrez votre civilité</label>
+                <select id="civilité" required>
+                    <option value="">Choisissez</option>
+                    <option value="homme">Homme</option>
+                    <option value="femme">Femme</option>
+                    <option value="autre">Autre</option>
+                </select><br>
+                <label for="password">Entrez votre mot de passe</label>
+                <input id="password" type="password" required><br>
+                <label for="passwordValider">Entrez à nouveau votre mot de passe</label>
+                <input id="passwordValider" type="password" required><br>
+                <span id="error-message" class="error"></span><br>
+                <label for="login">Entrez votre nom d'utilisateur</label>
+                <input id="login" type="text" required><br>
+
+                <input id="submit" type="submit" value="Créer mon compte">
+
+        </form>
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#creationCompte').on('submit', function(event) {
+                var password = $('#password').val();
+                var confirmPassword = $('#passwordValider').val();
+                var errorMessage = '';
+
+                if (password != confirmPassword) {
+                    errorMessage = 'Les mots de passes ne correspondent pas.';
+                    $('#error-message').text(errorMessage);
+                    event.preventDefault(); 
+                }
+            });
+        });
+    </script>
+
+</body>
+
+<footer>
+
+</footer>
+
